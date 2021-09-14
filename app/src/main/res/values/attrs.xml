@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="customAvatarView">
+    <declare-styleable name="CustomAvatarView">
         <attr name="hasFollow" format="boolean"/>
-        <attr name="hasStroke" format="boolean"/>
         <attr name="strokeColor" format="color" />
         <attr name="strokeWidth" format="dimension" />
+        <attr name="icFollowRes" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="CustomView">
+        <attr name="booleanValue" format="boolean"/>
+        <attr name="floatValue" format="float"/>
+        <attr name="colorValue" format="color" />
+        <attr name="dimensionValue" format="dimension" />
+        <attr name="integerValue" format="integer" />
+        <attr name="stringValue" format="string" />
+        <attr name="fractionValue" format="fraction" />
+        <attr name="enumValue">
+            <enum name="enum0" value="0" />
+            <enum name="enum1" value="1" />
+            <enum name="enum2" value="2" />
+        </attr>
     </declare-styleable>
 </resources>
