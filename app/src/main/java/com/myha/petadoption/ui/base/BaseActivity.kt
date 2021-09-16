@@ -19,11 +19,12 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = DataBindingUtil.setContentView(this, layoutRes)
         binding.lifecycleOwner = this
+        init()
     }
 
+    abstract fun init()
     fun showLoading() = Unit
     fun hideLoading() = Unit
     fun checkNetworking() = Unit
