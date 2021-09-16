@@ -1,4 +1,4 @@
-package com.myha.petadoption.extension
+package com.myha.petadoption.utils.extension
 
 import android.view.View
 

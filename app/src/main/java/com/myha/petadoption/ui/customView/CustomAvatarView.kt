@@ -1,7 +1,6 @@
-package com.myha.petadoption.customView
+package com.myha.petadoption.ui.customView
 
 import android.content.Context
-import android.content.res.ColorStateList
 import android.content.res.TypedArray
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -9,7 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import com.myha.petadoption.R
 import com.myha.petadoption.databinding.CustomAvatarViewBinding
-import com.myha.petadoption.extension.ViewExtension.isShow
+import com.myha.petadoption.utils.extension.ViewExtension.isShow
 
 /**
  * Created by Aria on 9/13/2021.

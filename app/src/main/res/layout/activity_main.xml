@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".MainActivity">
+    tools:context=".ui.main.MainActivity">
 
-    <com.myha.petadoption.customView.CustomAvatarView
+    <com.myha.petadoption.ui.customView.CustomAvatarView
         android:layout_width="@dimen/value_50"
         android:layout_height="@dimen/value_50"
         app:layout_constraintTop_toTopOf="parent"
@@ -16,7 +16,7 @@
         app:hasFollow="false"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.myha.petadoption.customView.CustomAvatarView
+    <com.myha.petadoption.ui.customView.CustomAvatarView
         android:id="@+id/avt2"
         android:layout_width="@dimen/value_50"
         android:layout_height="@dimen/value_50"
@@ -27,7 +27,7 @@
         app:strokeColor="@color/white"
         app:strokeWidth="@dimen/value_2" />
 
-    <com.myha.petadoption.customView.CustomAvatarView
+    <com.myha.petadoption.ui.customView.CustomAvatarView
         android:id="@+id/avt3"
         android:layout_width="@dimen/value_50"
         android:layout_height="@dimen/value_50"
