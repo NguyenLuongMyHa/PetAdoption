@@ -6,39 +6,16 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        tools:context=".ui.main.MainActivity">
+        tools:context=".main.view.MainActivity">
 
-        <com.myha.petadoption.ui.customView.CustomAvatarView
-            android:id="@+id/avt1"
-            android:layout_width="@dimen/value_50"
-            android:layout_height="@dimen/value_50"
-            android:layout_margin="@dimen/value_2"
-            app:hasFollow="false"
-            app:layout_constraintStart_toStartOf="parent"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/country_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.myha.petadoption.ui.customView.CustomAvatarView
-            android:id="@+id/avt2"
-            android:layout_width="@dimen/value_50"
-            android:layout_height="@dimen/value_50"
-            android:layout_margin="@dimen/value_2"
-            app:hasFollow="false"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/avt1"
-            app:strokeColor="@color/black"
-            app:strokeWidth="@dimen/value_2" />
-
-        <com.myha.petadoption.ui.customView.CustomAvatarView
-            android:id="@+id/avt3"
-            android:layout_width="@dimen/value_50"
-            android:layout_height="@dimen/value_50"
-            android:layout_margin="@dimen/value_2"
-            app:hasFollow="true"
-            app:icFollowRes="@drawable/ic_follow"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/avt2"
-            app:strokeColor="@color/black"
-            app:strokeWidth="@dimen/value_2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
