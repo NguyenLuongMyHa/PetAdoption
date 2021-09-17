@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.myha.petadoption.R
 import com.myha.petadoption.databinding.ActivityMainBinding
 import com.myha.petadoption.ui.base.BaseActivity
+import com.myha.petadoption.utils.extension.ViewExtension.hide
+import com.myha.petadoption.utils.extension.ViewExtension.show
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,6 +33,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 	}
 
 	private fun setUpObservers() {
+		mainViewModel.loading.observe(this, {
+			if (it) binding.progressCircular.show()
+			else binding.progressCircular.hide()
+		})
+
 		mainViewModel.getCountries().observe(this, { countryList ->
 			countryList?.let {
 				binding.countryRecyclerview.apply {

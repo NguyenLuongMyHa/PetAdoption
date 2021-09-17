@@ -1,7 +1,6 @@
 package com.myha.petadoption.data.api
 
 import com.myha.petadoption.data.model.Countries
-import retrofit2.Response
 import retrofit2.http.GET
 
 /**
@@ -9,5 +8,5 @@ import retrofit2.http.GET
  */
 interface BaseService {
     @GET("region/europe")
-    suspend fun getCountries(): Response<Countries>
+    suspend fun getCountries(): Countries
 }

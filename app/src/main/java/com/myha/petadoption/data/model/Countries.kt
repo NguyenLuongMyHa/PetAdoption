@@ -1,5 +1,7 @@
 package com.myha.petadoption.data.model
 
+import com.squareup.moshi.Json
+
 /**
  * Created by Aria on 9/17/2021.
  */
@@ -12,6 +14,7 @@ data class CountriesItem(
     val area: Double,
     val borders: List<String>,
     val callingCodes: List<String>,
+    @Json(name = "capital")
     val capital: String,
     val cioc: String,
     val currencies: List<Currency>,
@@ -20,6 +23,7 @@ data class CountriesItem(
     val gini: Double,
     val languages: List<Language>,
     val latlng: List<Double>,
+    @Json(name = "name")
     val name: String,
     val nativeName: String,
     val numericCode: String,

@@ -3,6 +3,8 @@ package com.myha.petadoption.ui.main
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.myha.petadoption.data.api.ResultWrapper
+import com.myha.petadoption.data.model.Countries
 import com.myha.petadoption.data.model.Country
 import com.myha.petadoption.data.repository.BaseRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,6 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(private val repository: BaseRepository) : ViewModel() {
     private val countryLiveData = MutableLiveData<List<Country>>()
+    val loading = MutableLiveData<Boolean>()
 
     fun getCountries() = countryLiveData
 
@@ -25,19 +28,27 @@ class MainViewModel @Inject constructor(private val repository: BaseRepository) 
 
     private fun loadCountries() {
         viewModelScope.launch {
-            val countries = repository.getCountries()
-            when (countries.isSuccessful) {
-                true -> {
-                    with(countries.body().orEmpty()) {
-                        var countryList = listOf<Country>()
+            loading.postValue(true)
+            val resultWrapper = repository.getCountries()
+            when (resultWrapper) {
+                is ResultWrapper.Success<*> -> {
+                    val countriesResponse = resultWrapper.value as Countries
+                    var countryList = listOf<Country>()
+                    with(countriesResponse) {
                         forEach { (_, _, _, _, _, _, capital, _, _, _, _, _, _, _, name) ->
                             countryList = countryList + Country(name, capital)
                         }
                         countryLiveData.postValue(countryList)
                     }
+                    loading.postValue(false)
+                }
+                is ResultWrapper.NetworkError -> {
+                    Timber.e("Network Error")
+                    loading.postValue(false)
                 }
                 else -> {
-                    Timber.e(countries.message())
+                    Timber.e("Error")
+                    loading.postValue(false)
                 }
             }
         }
