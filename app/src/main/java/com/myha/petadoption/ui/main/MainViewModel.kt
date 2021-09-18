@@ -3,8 +3,7 @@ package com.myha.petadoption.ui.main
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.myha.petadoption.data.api.ResultWrapper
-import com.myha.petadoption.data.model.Countries
+import com.myha.petadoption.data.api.ApiWrapper
 import com.myha.petadoption.data.model.Country
 import com.myha.petadoption.data.repository.BaseRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -29,12 +28,10 @@ class MainViewModel @Inject constructor(private val repository: BaseRepository) 
     private fun loadCountries() {
         viewModelScope.launch {
             loading.postValue(true)
-            val resultWrapper = repository.getCountries()
-            when (resultWrapper) {
-                is ResultWrapper.Success<*> -> {
-                    val countriesResponse = resultWrapper.value as Countries
-                    var countryList = listOf<Country>()
-                    with(countriesResponse) {
+            when (val res = repository.getCountries()) {
+                is ApiWrapper.Success -> {
+                    with(res.data.orEmpty()) {
+                        var countryList = listOf<Country>()
                         forEach { (_, _, _, _, _, _, capital, _, _, _, _, _, _, _, name) ->
                             countryList = countryList + Country(name, capital)
                         }
@@ -42,12 +39,16 @@ class MainViewModel @Inject constructor(private val repository: BaseRepository) 
                     }
                     loading.postValue(false)
                 }
-                is ResultWrapper.NetworkError -> {
-                    Timber.e("Network Error")
+                is ApiWrapper.ApiError -> {
+                    Timber.e("Code: ${res.code}  \nMessage: ${res.message}  \nError: ${res.error}")
+                    loading.postValue(false)
+                }
+                is ApiWrapper.NetworkError -> {
+                    Timber.e("NetworkError \n Message: ${res.message}")
                     loading.postValue(false)
                 }
                 else -> {
-                    Timber.e("Error")
+                    Timber.e("UnKnowError \n Message: ${res.message}")
                     loading.postValue(false)
                 }
             }

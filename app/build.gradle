@@ -70,6 +70,7 @@ dependencies {
 
     //json with Moshi and goodbye Gson (https://proandroiddev.com/goodbye-gson-hello-moshi-4e591116231e)
     implementation("com.squareup.moshi:moshi:$moshiVersion")
+    implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
     kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion")
 
     testImplementation 'junit:junit:4.13.2'
