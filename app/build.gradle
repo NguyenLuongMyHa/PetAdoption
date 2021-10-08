@@ -58,6 +58,9 @@ dependencies {
     //Log with Timber (https://medium.com/mindorks/better-logging-in-android-using-timber-72e40cc2293d)
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
+    //Leak detection Leakcanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+
     //di with Hilt (https://developer.android.com/training/dependency-injection/hilt-android)
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
