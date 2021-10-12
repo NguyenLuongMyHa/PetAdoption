@@ -20,4 +20,12 @@
             <enum name="enum2" value="2" />
         </attr>
     </declare-styleable>
+    <declare-styleable name="HomeBottomNavView">
+        <attr name="selected">
+            <enum name="home" value="0" />
+            <enum name="location" value="1" />
+            <enum name="explore" value="2" />
+            <enum name="discuss" value="3" />
+        </attr>
+    </declare-styleable>
 </resources>

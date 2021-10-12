@@ -58,6 +58,10 @@ dependencies {
     //Log with Timber (https://medium.com/mindorks/better-logging-in-android-using-timber-72e40cc2293d)
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
+    //navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+
     //Leak detection Leakcanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
 
