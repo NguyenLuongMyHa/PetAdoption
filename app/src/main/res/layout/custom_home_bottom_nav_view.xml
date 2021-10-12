@@ -7,6 +7,7 @@
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="@dimen/value_80"
             android:background="@drawable/bg_dark_20"
@@ -20,7 +21,6 @@
                 android:id="@+id/iv_indicator"
                 android:layout_width="@dimen/value_24"
                 android:layout_height="@dimen/value_4"
-                android:layout_marginTop="@dimen/value_16"
                 android:layout_marginBottom="@dimen/value_20"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/layout_home"

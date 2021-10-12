@@ -4,16 +4,23 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnticipateOvershootInterpolator
 import android.widget.ImageView
 import androidx.annotation.NonNull
 import androidx.annotation.Nullable
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
+import androidx.transition.ChangeBounds
+import androidx.transition.Transition
+import androidx.transition.TransitionManager
 import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.myha.petadoption.R
 import com.myha.petadoption.databinding.CustomHomeBottomNavViewBinding
 
@@ -72,6 +79,7 @@ class HomeBottomNavView @JvmOverloads constructor(
                     onTabSelected?.onTabSelected(position)
                 }
                 selectedPosition = position
+                animateIndicator(position)
                 setDrawableCurrentTab()
             }
         }
@@ -98,7 +106,27 @@ class HomeBottomNavView @JvmOverloads constructor(
         }
     }
 
-    fun setCurrentTab(position: Int, viewPager: ViewPager) {
+    private fun animateIndicator(item: Int) {
+        val targetView = when(item) {
+            HomeBottomItem.HOME.value -> binding.layoutHome
+            HomeBottomItem.LOCATION.value -> binding.layoutLocation
+            HomeBottomItem.EXPLORE.value -> binding.layoutExplore
+            else -> binding.layoutDiscuss
+        }
+        val constraintSet = ConstraintSet()
+        constraintSet.clone(binding.container)
+        constraintSet.clear(binding.ivIndicator.id, ConstraintSet.START)
+        constraintSet.clear(binding.ivIndicator.id, ConstraintSet.END)
+        constraintSet.connect(binding.ivIndicator.id, ConstraintSet.START, targetView.id, ConstraintSet.START)
+        constraintSet.connect(binding.ivIndicator.id, ConstraintSet.END, targetView.id, ConstraintSet.END)
+        val transition: Transition = ChangeBounds()
+        transition.interpolator = AnticipateOvershootInterpolator(1.0f)
+        transition.duration = 1200
+        TransitionManager.beginDelayedTransition(binding.container, transition)
+        constraintSet.applyTo(binding.container)
+    }
+
+    fun setCurrentTab(position: Int, viewPager: ViewPager2) {
         selectedPosition = position
         viewPager.currentItem = selectedPosition
         setDrawableCurrentTab()
