@@ -3,10 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../layout/custom_preview.xml" value="0.4004085801838611" />
+        <entry key="../../../../layout/custom_preview.xml" value="0.22" />
         <entry key="app/src/main/res/drawable-xxhdpi/bg_white_4.xml" value="0.21574074074074073" />
         <entry key="app/src/main/res/drawable/bg_dark_20.xml" value="0.1685185185185185" />
         <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.28703703703703703" />
+        <entry key="app/src/main/res/drawable/bg_shadow.xml" value="0.2696629213483146" />
         <entry key="app/src/main/res/drawable/bg_splash.xml" value="0.28703703703703703" />
         <entry key="app/src/main/res/drawable/bg_white_4.xml" value="0.21574074074074073" />
         <entry key="app/src/main/res/layout/activity_demo_home.xml" value="0.37552083333333336" />
@@ -15,6 +16,8 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/activity_main_demo.xml" value="0.30364583333333334" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.2864583333333333" />
+        <entry key="app/src/main/res/layout/custom_avatar_home_view.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/custom_avatar_view.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/custom_home_bottom_nav_view.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_discuss.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/fragment_explore.xml" value="0.37552083333333336" />

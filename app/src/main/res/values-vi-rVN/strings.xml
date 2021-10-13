@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">VN Pet Adoption</string>
     <string name="follow">Theo dõi</string>
+    <string name="notification">Thông báo</string>
     <string name="home">Trang chủ</string>
     <string name="location">Vị trí</string>
     <string name="explore">Khám phá</string>

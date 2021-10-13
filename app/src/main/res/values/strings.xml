@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">VN Pet Adoption</string>
     <string name="follow">Follow</string>
+    <string name="notification">Notification</string>
     <string name="home">Home</string>
     <string name="location">Location</string>
     <string name="explore">Explore</string>
