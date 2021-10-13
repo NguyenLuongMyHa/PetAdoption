@@ -26,4 +26,95 @@
         <item name="colorAccent">@color/primary</item>
         <item name="android:statusBarColor">@color/primary_dark</item>
     </style>
+
+    <style name="Text12" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_12</item>
+    </style>
+    <style name="Text14" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_14</item>
+    </style>
+    <style name="Text16" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
+    <style name="Text18" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_18</item>
+    </style>
+    <style name="Text20" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_20</item>
+    </style>
+    <style name="Text22" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_22</item>
+    </style>
+    <style name="TextPoppinsRegular12" parent="Text12">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+    <style name="TextPoppinsRegular14" parent="Text14">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+    <style name="TextPoppinsRegular16" parent="Text16">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+    <style name="TextPoppinsRegular18" parent="Text18">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+    <style name="TextPoppinsRegular20" parent="Text20">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+    <style name="TextPoppinsRegular22" parent="Text22">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+    <style name="TextPoppinsMedium12" parent="Text12">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+    <style name="TextPoppinsMedium14" parent="Text14">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+    <style name="TextPoppinsMedium16" parent="Text16">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+    <style name="TextPoppinsMedium18" parent="Text18">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+    <style name="TextPoppinsMedium20" parent="Text20">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+    <style name="TextPoppinsMedium22" parent="Text22">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+    <style name="TextPoppinsBold12" parent="Text12">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+    <style name="TextPoppinsBold14" parent="Text14">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+    <style name="TextPoppinsBold16" parent="Text16">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+    <style name="TextPoppinsBold18" parent="Text18">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+    <style name="TextPoppinsBold20" parent="Text20">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+    <style name="TextPoppinsBold22" parent="Text22">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+    <style name="TextPoppinsLight12" parent="Text12">
+        <item name="android:fontFamily">@font/poppins_light</item>
+    </style>
+    <style name="TextPoppinsLight14" parent="Text14">
+        <item name="android:fontFamily">@font/poppins_light</item>
+    </style>
+    <style name="TextPoppinsLight16" parent="Text16">
+        <item name="android:fontFamily">@font/poppins_light</item>
+    </style>
+    <style name="TextPoppinsLight18" parent="Text18">
+        <item name="android:fontFamily">@font/poppins_light</item>
+    </style>
+    <style name="TextPoppinsLight20" parent="Text20">
+        <item name="android:fontFamily">@font/poppins_light</item>
+    </style>
+    <style name="TextPoppinsLight22" parent="Text22">
+        <item name="android:fontFamily">@font/poppins_light</item>
+    </style>
 </resources>

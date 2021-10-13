@@ -25,6 +25,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ui.home.DemoHomeActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true" />
         <activity android:name=".ui.main.MainActivity">

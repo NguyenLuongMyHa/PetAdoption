@@ -1,13 +1,11 @@
 package com.myha.petadoption.ui.home
 
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
+import androidx.fragment.app.Fragment
 import com.myha.petadoption.R
 import com.myha.petadoption.databinding.ActivityHomeBinding
 import com.myha.petadoption.ui.base.BaseActivity
+import com.myha.petadoption.ui.base.BasePagerAdapter
 import com.myha.petadoption.ui.customView.HomeBottomNavView
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -16,31 +14,57 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     override val layoutRes: Int
         get() = R.layout.activity_home
 
+    private lateinit var homeFragment: HomeFragment
+    private lateinit var locationFragment: LocationFragment
+    private lateinit var exploreFragment: ExploreFragment
+    private lateinit var discussFragment: DiscussFragment
+
     override fun init() {
+        homeFragment = HomeFragment()
+        locationFragment = LocationFragment()
+        exploreFragment = ExploreFragment()
+        discussFragment = DiscussFragment()
+        val fragments =
+            listOf<Fragment>(homeFragment, locationFragment, exploreFragment, discussFragment)
+        val pagerAdapter = BasePagerAdapter(this, fragments)
+        binding.viewPagerHome.apply {
+            adapter = pagerAdapter
+            isUserInputEnabled = false
+        }
+
         binding.homeBottomNav.onTabSelected = object : HomeBottomNavView.OnTabSelected {
             override fun onTabSelected(position: Int) {
-                val navController = Navigation.findNavController(this@HomeActivity, R.id.nav_home)
-                when (position) {
-                    HomeBottomNavView.HomeBottomItem.HOME.value -> if (!navController.popBackStack())
-                        navController.navigate(R.id.homeFragment)
-                    HomeBottomNavView.HomeBottomItem.LOCATION.value -> if (!navController.popBackStack())
-                        navController.navigate(R.id.locationFragment)
-                    HomeBottomNavView.HomeBottomItem.EXPLORE.value -> if (!navController.popBackStack())
-                        navController.navigate(R.id.exploreFragment)
-                    HomeBottomNavView.HomeBottomItem.DISCUSS.value -> if (!navController.popBackStack())
-                        navController.navigate(R.id.discussFragment)
-                }
+                binding.homeBottomNav.setCurrentTab(position, binding.viewPagerHome)
+                setActivityTitle(position)
             }
         }
     }
 
+    private fun setActivityTitle(position: Int) {
+        when (position) {
+            HomeBottomNavView.HomeBottomItem.HOME.value -> binding.tvTitle.text =
+                getString(R.string.home)
+            HomeBottomNavView.HomeBottomItem.LOCATION.value -> binding.tvTitle.text =
+                getString(R.string.location)
+            HomeBottomNavView.HomeBottomItem.EXPLORE.value -> binding.tvTitle.text =
+                getString(R.string.explore)
+            else -> binding.tvTitle.text = getString(R.string.discuss)
+        }
+
+
+    }
+
     override fun onBackPressed() {
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.Q &&
-            isTaskRoot && supportFragmentManager.primaryNavigationFragment?.childFragmentManager?.backStackEntryCount ?: 0 == 0 && supportFragmentManager.backStackEntryCount == 0
-        ) {
-            finishAfterTransition()
+        if (binding.viewPagerHome.currentItem == 0) {
+            if (Build.VERSION.SDK_INT == Build.VERSION_CODES.Q &&
+                isTaskRoot && supportFragmentManager.primaryNavigationFragment?.childFragmentManager?.backStackEntryCount ?: 0 == 0 && supportFragmentManager.backStackEntryCount == 0
+            ) {
+                finishAfterTransition()
+            } else {
+                super.onBackPressed()
+            }
         } else {
-            super.onBackPressed()
+            binding.viewPagerHome.currentItem = 0
         }
     }
 }

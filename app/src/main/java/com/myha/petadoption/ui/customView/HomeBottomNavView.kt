@@ -121,7 +121,7 @@ class HomeBottomNavView @JvmOverloads constructor(
         constraintSet.connect(binding.ivIndicator.id, ConstraintSet.END, targetView.id, ConstraintSet.END)
         val transition: Transition = ChangeBounds()
         transition.interpolator = AnticipateOvershootInterpolator(1.0f)
-        transition.duration = 1200
+        transition.duration = 500
         TransitionManager.beginDelayedTransition(binding.container, transition)
         constraintSet.applyTo(binding.container)
     }

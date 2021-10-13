@@ -9,7 +9,10 @@
         <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.28703703703703703" />
         <entry key="app/src/main/res/drawable/bg_splash.xml" value="0.28703703703703703" />
         <entry key="app/src/main/res/drawable/bg_white_4.xml" value="0.21574074074074073" />
+        <entry key="app/src/main/res/layout/activity_demo_home.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_home_2.xml" value="0.37552083333333336" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/activity_main_demo.xml" value="0.30364583333333334" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.2864583333333333" />
         <entry key="app/src/main/res/layout/custom_home_bottom_nav_view.xml" value="0.33" />
@@ -21,4 +24,11 @@
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
+  </component>
 </project>
