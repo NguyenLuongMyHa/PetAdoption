@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTopicTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Urgent"
+            style="@style/TextPoppinsBold18"
+            android:textColor="@color/primary_dark"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/tvAdoptionCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(10)"
+            style="@style/TextPoppinsBold18"
+            android:textColor="@color/primary_dark"
+            android:gravity="center_vertical"
+            android:layout_marginStart="@dimen/value_4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvTopicTitle" />
+        <TextView
+            android:id="@+id/tvTopicViewAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view_all"
+            style="@style/TextPoppinsRegular14"
+            android:textColor="@color/text_gray"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="@dimen/value_16"
+            android:layout_marginStart="@dimen/value_4"
+            app:layout_constraintTop_toTopOf="@id/tvTopicTitle"
+            app:layout_constraintBottom_toBottomOf="@id/tvTopicTitle"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recAdopt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/value_10"
+            android:clipToPadding="false"
+            app:layout_constraintTop_toBottomOf="@id/tvTopicTitle"
+            tools:listitem="@layout/item_adoption_square"
+            android:orientation="horizontal"
+            tools:itemCount="2"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

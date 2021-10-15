@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.myha.petadoption.ui.home.HomeFragment"
+        android:name="com.myha.petadoption.ui.home.home.HomeFragment"
         tools:layout="@layout/fragment_home"
         android:label="HomeFragment" >
         <action
@@ -22,17 +22,17 @@
     </fragment>
     <fragment
         android:id="@+id/locationFragment"
-        android:name="com.myha.petadoption.ui.home.LocationFragment"
+        android:name="com.myha.petadoption.ui.home.location.LocationFragment"
         tools:layout="@layout/fragment_location"
         android:label="LocationFragment" />
     <fragment
         android:id="@+id/exploreFragment"
-        android:name="com.myha.petadoption.ui.home.ExploreFragment"
+        android:name="com.myha.petadoption.ui.home.explore.ExploreFragment"
         tools:layout="@layout/fragment_explore"
         android:label="ExploreFragment" />
     <fragment
         android:id="@+id/discussFragment"
-        android:name="com.myha.petadoption.ui.home.DiscussFragment"
+        android:name="com.myha.petadoption.ui.home.discuss.DiscussFragment"
         tools:layout="@layout/fragment_discuss"
         android:label="DiscussFragment" />
 </navigation>

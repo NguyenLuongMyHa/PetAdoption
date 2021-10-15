@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/value_16">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/value_8">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivPet"
+                android:layout_width="wrap_content"
+                app:layout_constraintWidth_max="@dimen/value_210"
+                android:layout_height="@dimen/value_120"
+                app:srcCompat="@drawable/bg_pet_place_holder"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.14"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvPetName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                style="@style/TextPoppinsBold14"
+                android:textColor="@color/primary_dark"
+                app:layout_constraintTop_toBottomOf="@id/ivPet"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvAdoptionFee"
+                android:layout_marginTop="@dimen/value_8"/>
+
+            <TextView
+                android:id="@+id/tvPetLocation"
+                style="@style/TextPoppinsRegular12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/value_4"
+                android:gravity="center_vertical"
+                android:text="@string/app_name"
+                android:textColor="@color/text_gray"
+                app:drawableStartCompat="@drawable/ic_pet_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPetName" />
+            <TextView
+                android:id="@+id/tvAdoptionFee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/free"
+                style="@style/TextPoppinsRegular12"
+                android:textColor="@color/text_gray"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toTopOf="@id/tvPetName"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:drawablePadding="@dimen/value_4"
+                app:drawableStartCompat="@drawable/ic_heart_fill" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

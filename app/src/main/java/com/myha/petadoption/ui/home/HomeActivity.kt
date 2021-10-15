@@ -7,6 +7,10 @@ import com.myha.petadoption.databinding.ActivityHomeBinding
 import com.myha.petadoption.ui.base.BaseActivity
 import com.myha.petadoption.ui.base.BasePagerAdapter
 import com.myha.petadoption.ui.customView.HomeBottomNavView
+import com.myha.petadoption.ui.home.discuss.DiscussFragment
+import com.myha.petadoption.ui.home.explore.ExploreFragment
+import com.myha.petadoption.ui.home.home.HomeFragment
+import com.myha.petadoption.ui.home.location.LocationFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

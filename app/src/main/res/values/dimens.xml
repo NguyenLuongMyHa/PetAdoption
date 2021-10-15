@@ -123,6 +123,7 @@
     <dimen name="value_119">119dp</dimen>
     <dimen name="value_120">120dp</dimen>
     <dimen name="value_200">200dp</dimen>
+    <dimen name="value_210">210dp</dimen>
 
     <dimen name="text_12">12sp</dimen>
     <dimen name="text_14">14sp</dimen>

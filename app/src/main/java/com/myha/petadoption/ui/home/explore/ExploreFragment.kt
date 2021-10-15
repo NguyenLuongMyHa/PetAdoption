@@ -1,4 +1,4 @@
-package com.myha.petadoption.ui.home
+package com.myha.petadoption.ui.home.explore
 
 import com.myha.petadoption.R
 import com.myha.petadoption.databinding.FragmentExploreBinding

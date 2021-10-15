@@ -6,4 +6,6 @@
     <string name="location">Location</string>
     <string name="explore">Explore</string>
     <string name="discuss">Discuss</string>
+    <string name="free">Free</string>
+    <string name="view_all">View all</string>
 </resources>

@@ -18,6 +18,14 @@
         <item name="cornerSize">50%</item>
         <item name="cornerFamily">rounded</item>
     </style>
+    <style name="ShapeAppearanceOverlay.14" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="cornerSize">@dimen/value_14</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.16" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="cornerSize">@dimen/value_16</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
 
     <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/bg_splash</item>
@@ -44,6 +52,18 @@
     </style>
     <style name="Text22" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/text_22</item>
+    </style>
+    <style name="Text24" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_24</item>
+    </style>
+    <style name="Text26" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_26</item>
+    </style>
+    <style name="Text28" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_28</item>
+    </style>
+    <style name="Text30" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_30</item>
     </style>
     <style name="TextPoppinsRegular12" parent="Text12">
         <item name="android:fontFamily">@font/poppins_regular</item>
@@ -97,6 +117,9 @@
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
     <style name="TextPoppinsBold22" parent="Text22">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+    <style name="TextPoppinsBold24" parent="Text24">
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
     <style name="TextPoppinsLight12" parent="Text12">

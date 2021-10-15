@@ -21,8 +21,12 @@
         <entry key="app/src/main/res/layout/custom_home_bottom_nav_view.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_discuss.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/fragment_explore.xml" value="0.37552083333333336" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.37552083333333336" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_home_top.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_location.xml" value="0.37552083333333336" />
+        <entry key="app/src/main/res/layout/item_adoption_fee.xml" value="0.30364583333333334" />
+        <entry key="app/src/main/res/layout/item_adoption_square.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_topic_adoption.xml" value="0.25" />
       </map>
     </option>
   </component>

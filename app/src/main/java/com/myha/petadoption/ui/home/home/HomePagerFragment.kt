@@ -1,14 +1,14 @@
-package com.myha.petadoption.ui.home
+package com.myha.petadoption.ui.home.home
 
 import com.myha.petadoption.R
 import com.myha.petadoption.databinding.FragmentHomeBinding
+import com.myha.petadoption.databinding.FragmentLocationBinding
 import com.myha.petadoption.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+class HomePagerFragment : BaseFragment<FragmentLocationBinding>() {
     override val layoutRes: Int
-        get() = R.layout.fragment_home
-
+        get() = R.layout.fragment_location
 
 }
