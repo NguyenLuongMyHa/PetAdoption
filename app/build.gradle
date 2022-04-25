@@ -26,6 +26,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "version"
+    productFlavors {
+        staging {
+            dimension "version"
+            applicationIdSuffix ".staging"
+            versionNameSuffix "-staging"
+        }
+        production {
+            dimension "version"
+            applicationIdSuffix ".production"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -79,6 +93,9 @@ dependencies {
     implementation("com.squareup.moshi:moshi:$moshiVersion")
     implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
     kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion")
+
+    //facebook sdk for tracking event
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

@@ -12,6 +12,9 @@ import com.myha.petadoption.ui.home.explore.ExploreFragment
 import com.myha.petadoption.ui.home.home.HomeFragment
 import com.myha.petadoption.ui.home.location.LocationFragment
 import dagger.hilt.android.AndroidEntryPoint
+import com.facebook.FacebookSdk
+import com.facebook.LoggingBehavior
+import com.facebook.appevents.AppEventsLogger
 
 @AndroidEntryPoint
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
@@ -22,7 +25,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     private lateinit var locationFragment: LocationFragment
     private lateinit var exploreFragment: ExploreFragment
     private lateinit var discussFragment: DiscussFragment
-
+    private lateinit var logger: AppEventsLogger
     override fun init() {
         homeFragment = HomeFragment()
         locationFragment = LocationFragment()
@@ -42,6 +45,14 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                 setActivityTitle(position)
             }
         }
+        trackInitHomeEvent()
+    }
+
+    private fun trackInitHomeEvent() {
+        FacebookSdk.setIsDebugEnabled(true)
+        FacebookSdk.addLoggingBehavior(LoggingBehavior.APP_EVENTS)
+        logger = AppEventsLogger.newLogger(this)
+        logger.logEvent("trackInitEvent")
     }
 
     private fun setActivityTitle(position: Int) {
